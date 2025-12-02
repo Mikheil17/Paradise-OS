@@ -20,5 +20,5 @@ public class WYRChoice
 {
     public WYRBlock nextBlock;
     public AudioClip[] postClips;
-    public UnityEvent onChosen;
+    public int actionObjectIndex = -1;
 }

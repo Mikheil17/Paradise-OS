@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638997116110679652
-    m_Hash: 3296030495
+      ticks: 638999444649096348
+    m_Hash: 3644643295
   m_LockFileStatus:
     m_FilePath: C:/Users/Voltron/Documents/GitHub/VXR3/VXR4/VXR4/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638997116110730185
-    m_Hash: 3177342162
+      ticks: 638999444649495242
+    m_Hash: 1542475030
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -253,6 +253,65 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+  fingerprint: 
+- packageId: com.unity.2d.sprite@1.0.0
+  testable: 0
+  isDirectDependency: 1
+  version: 1.0.0
+  source: 2
+  resolvedPath: C:\Users\Voltron\Documents\GitHub\VXR3\VXR4\VXR4\Library\PackageCache\com.unity.2d.sprite@1.0.0
+  assetPath: Packages/com.unity.2d.sprite
+  name: com.unity.2d.sprite
+  displayName: 2D Sprite
+  author:
+    name: 
+    email: 
+    url: 
+  category: 2D
+  type: 
+  description: Use Unity Sprite Editor Window to create and edit Sprite asset properties
+    like pivot, borders and Physics shape
+  status: 0
+  errors: []
+  versions:
+    all:
+    - 1.0.0
+    compatible:
+    - 1.0.0
+    recommended: 1.0.0
+    deprecated: []
+  dependencies: []
+  resolvedDependencies: []
+  keywords:
+  - 2d
+  - sprite
+  - sprite editor window
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 1.0.0
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -791,6 +850,7 @@ m_ResolvedPackages:
     - 6.0.5
     - 6.0.6
     - 6.0.7
+    - 6.0.8
     compatible:
     - 5.2.3
     - 5.2.4
@@ -5182,6 +5242,7 @@ m_ResolvedPackages:
     - 1.8.23
     - 1.8.24
     - 1.8.25
+    - 1.8.26
     compatible:
     - 1.8.17
     - 1.8.18
@@ -5192,7 +5253,8 @@ m_ResolvedPackages:
     - 1.8.23
     - 1.8.24
     - 1.8.25
-    recommended: 1.8.25
+    - 1.8.26
+    recommended: 1.8.26
     deprecated: []
   dependencies:
   - name: com.unity.mathematics

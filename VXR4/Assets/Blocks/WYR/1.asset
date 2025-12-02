@@ -17,17 +17,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0d3e63213ff5cc14c8fed92e467ca9da, type: 3}
   - {fileID: 8300000, guid: 8ace32b611a0b984fb855111f1a88268, type: 3}
   choices:
-  - nextBlock: {fileID: 0}
+  - nextBlock: {fileID: 11400000, guid: be0b99020f1782f4dbb4c97d11df7674, type: 2}
     postClips:
     - {fileID: 8300000, guid: 43e6a37f5f51902499be5db35ac0a89b, type: 3}
-    onChosen:
-      m_PersistentCalls:
-        m_Calls: []
-  - nextBlock: {fileID: 0}
+    actionObjectIndex: -1
+  - nextBlock: {fileID: 11400000, guid: 152d06daef0c6404ba0ac587a8182354, type: 2}
     postClips:
     - {fileID: 8300000, guid: 5db9378d2dbb0264b9871ac46c3e73f3, type: 3}
-    onChosen:
-      m_PersistentCalls:
-        m_Calls: []
-  blueChoice: Be A Dog
-  redChoice: Be A Cat
+    actionObjectIndex: -1
+  blueChoice: Be a dog
+  redChoice: Be a cat

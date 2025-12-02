@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ButtonInteractionManager : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class ButtonInteractionManager : MonoBehaviour
 
     [Header("WYR Block")]
     public WYRBlock wYRBlock;
+
+    [Header("Events")]
+    public List<GameObject> actionObjects;
 
     private bool introPlayed = false;
     private bool waitingForButton = false;
@@ -95,7 +99,7 @@ public class ButtonInteractionManager : MonoBehaviour
         // Set button text to gold when pressed
         if (button != null && button.buttonText != null)
             button.buttonText.color = new Color(1f, 0.84f, 0f); // Gold
-        AdvanceToNextBlocks();
+            
         StartCoroutine(PlayButtonResponseAndNextWYR(button));
     }
 
@@ -106,6 +110,7 @@ public class ButtonInteractionManager : MonoBehaviour
         if (wYRBlock != null && wYRBlock.choices != null && choiceIndex >= 0 && choiceIndex < wYRBlock.choices.Length)
         {
             var choice = wYRBlock.choices[choiceIndex];
+            // Play post clips first
             if (choice.postClips != null)
             {
                 for (int i = 0; i < choice.postClips.Length; i++)
@@ -117,13 +122,24 @@ public class ButtonInteractionManager : MonoBehaviour
                 }
             }
 
-            // Run UnityEvent for this choice only
-            if (choice.onChosen != null)
-                choice.onChosen.Invoke();
+            // After post clips, call Execute method for this choice
+            if (choice.actionObjectIndex >= 0 && choice.actionObjectIndex < actionObjects.Count)
+            {
+                var target = actionObjects[choice.actionObjectIndex];
+                var component = target.GetComponent<MonoBehaviour>();
+                if (component != null)
+                {
+                    var method = component.GetType().GetMethod("Execute");
+                    if (method != null)
+                        method.Invoke(component, null);
+                }
+            }
 
-            // Branch to next block if present
+            // Branch to next block only after post clips and event
             if (choice.nextBlock != null)
+            {
                 wYRBlock = choice.nextBlock;
+            }
             else
             {
                 // End of script: disable buttons and stop
@@ -154,9 +170,6 @@ public class ButtonInteractionManager : MonoBehaviour
             int choiceIndex = (lastButtonPressed == blueButton) ? 0 : (lastButtonPressed == redButton) ? 1 : -1;
             if (choiceIndex >= 0 && choiceIndex < wYRBlock.choices.Length)
             {
-                // Run UnityEvent for this choice only
-                if (wYRBlock.choices[choiceIndex].onChosen != null)
-                    wYRBlock.choices[choiceIndex].onChosen.Invoke();
                 if (wYRBlock.choices[choiceIndex].nextBlock != null)
                     wYRBlock = wYRBlock.choices[choiceIndex].nextBlock;
             }
