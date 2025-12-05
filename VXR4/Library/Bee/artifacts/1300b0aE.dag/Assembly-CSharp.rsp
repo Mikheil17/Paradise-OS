@@ -491,6 +491,7 @@
 "Assets/Scripts/Events/OVRRigScaler.cs"
 "Assets/Scripts/Interactions/ButtonInteraction.cs"
 "Assets/Scripts/Interactions/ButtonInteractionManager.cs"
+"Assets/Scripts/Interactions/Strum.cs"
 "Assets/Scripts/Saving/SaveData.cs"
 "Assets/Scripts/Saving/SaveManager.cs"
 "Assets/Scripts/Saving/SaveSystem.cs"
