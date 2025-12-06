@@ -5,6 +5,8 @@ public class Strumming : MonoBehaviour
     public bool plucked = false;
     public AudioSource note;
 
+     public audienceCheerManager cheerManager;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("finger"))
@@ -13,6 +15,8 @@ public class Strumming : MonoBehaviour
             {
                 plucked = true;
                 note.Play();
+
+                cheerManager.StartCheer();
             }
     
         }
