@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Ionic.Zip;
 using UnityEngine;
 
 public class curtainRoll : MonoBehaviour

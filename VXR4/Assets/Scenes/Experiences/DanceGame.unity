@@ -7394,7 +7394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crowdWidth: 15
-  crowdDepth: 4
+  crowdDepth: 6
   spacing: 0.5
   bounceSpeed: 12
   crowdPrefab: {fileID: 3528168729928322110, guid: 43f42ce96fbf2c342b8601e75a90eac5,

@@ -197,7 +197,7 @@ public class DanceSimulator : MonoBehaviour
 
     private IEnumerator WaitAndFadeOut(float resultClipLength)
     {
-        yield return new WaitForSeconds(resultClipLength + 10f);
+        yield return new WaitForSeconds(resultClipLength + 15f);
         FadeVRCanvas(0f, 1f, crowdFadeDuration);
         yield return new WaitForSeconds(crowdFadeDuration);
         // Load next scene by build index

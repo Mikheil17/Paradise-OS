@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Blowing : MonoBehaviour
 {
-    public bool blown = false;
     public AudioSource note1;
     public AudioSource note2;
     public AudioSource note3;
@@ -12,6 +11,16 @@ public class Blowing : MonoBehaviour
     public AudioSource note6;
 
      public audienceCheerManager cheerManager;
+
+    public void ResetAudioSources()
+    {
+        note1.Stop();
+        note2.Stop();
+        note3.Stop();
+        note4.Stop();
+        note5.Stop();
+        note6.Stop();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -28,6 +37,7 @@ public class Blowing : MonoBehaviour
         if (other.CompareTag("head"))
         {
             StopAllCoroutines();
+            ResetAudioSources();
         }
     }
 
