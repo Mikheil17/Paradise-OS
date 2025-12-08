@@ -153,13 +153,13 @@ public class DanceSimulator : MonoBehaviour
         float timer = 0f;
         while (timer < duration)
         {
-            // Example: sum hand and body movement
             if (playerMovementTracker != null)
             {
                 if (playerMovementTracker.IsLeftHandMoving) playerScore += Time.deltaTime;
                 if (playerMovementTracker.IsRightHandMoving) playerScore += Time.deltaTime;
                 if (playerMovementTracker.IsBodyMoving) playerScore += Time.deltaTime;
             }
+
             timer += Time.deltaTime;
             yield return null;
         }
