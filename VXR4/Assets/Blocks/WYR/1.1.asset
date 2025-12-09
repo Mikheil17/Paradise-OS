@@ -12,15 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6891d240412df040addbcc15dd20988, type: 3}
   m_Name: 1.1
   m_EditorClassIdentifier: 
-  preClips: []
-  choices:
-  - nextBlock: {fileID: 11400000, guid: be0b99020f1782f4dbb4c97d11df7674, type: 2}
-    postClips:
-    - {fileID: 8300000, guid: 43e6a37f5f51902499be5db35ac0a89b, type: 3}
-    actionObjectIndex: -1
-  - nextBlock: {fileID: 11400000, guid: 152d06daef0c6404ba0ac587a8182354, type: 2}
-    postClips:
-    - {fileID: 8300000, guid: 5db9378d2dbb0264b9871ac46c3e73f3, type: 3}
-    actionObjectIndex: -1
   blueChoice: Stare at a solar eclipse
   redChoice: Listen to sounds of a thousand cowbells
+  nextBlock: {fileID: 11400000, guid: 7f178e5476cda2344b6390878d17e129, type: 2}

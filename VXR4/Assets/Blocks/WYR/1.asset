@@ -12,15 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6891d240412df040addbcc15dd20988, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: 
-  preClips: []
-  choices:
-  - nextBlock: {fileID: 11400000, guid: be0b99020f1782f4dbb4c97d11df7674, type: 2}
-    postClips:
-    - {fileID: 8300000, guid: 43e6a37f5f51902499be5db35ac0a89b, type: 3}
-    actionObjectIndex: -1
-  - nextBlock: {fileID: 11400000, guid: 152d06daef0c6404ba0ac587a8182354, type: 2}
-    postClips:
-    - {fileID: 8300000, guid: 5db9378d2dbb0264b9871ac46c3e73f3, type: 3}
-    actionObjectIndex: -1
   blueChoice: Jump till your head explodes
   redChoice: Walk till your feet melt
+  nextBlock: {fileID: 11400000, guid: d683b141afba33f40af77e246c6c4400, type: 2}

@@ -11,10 +11,13 @@ public class loadingScreen : MonoBehaviour
     public AudioSource loadingAudioSource;
     public AudioClip loadingSound;
     [Header("Loading Settings")]
-    public float loadingDuration = 0f; // If 0, will use sound length
+    public float loadingDuration = 0f;
+
+    private SaveManager saveManager;
 
     private void Start()
     {
+        saveManager = SaveManager.instance;
         StartCoroutine(ShowLoadingScreen());
     }
 
@@ -49,8 +52,11 @@ public class loadingScreen : MonoBehaviour
 
         if (loadingAudioSource != null)
             loadingAudioSource.Stop();
+
         if (loadingCanvas != null)
             loadingCanvas.alpha = 0f;
-        // Loading complete, continue to next step here
+        
+
+        saveManager.GotoNextScene();
     }
 }

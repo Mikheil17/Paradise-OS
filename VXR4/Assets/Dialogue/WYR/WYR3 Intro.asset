@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec5b57c65e6926a478121f3dc854292b, type: 3}
-  m_Name: WYR1 Intro
+  m_Name: WYR3 Intro
   m_EditorClassIdentifier: 
   voiceClips:
-  - {fileID: 8300000, guid: 2906ccb7279ac3e41b57049f252ac001, type: 3}
+  - {fileID: 8300000, guid: 5861a777e39e01246ad952ff775d755c, type: 3}
   choices: []
   useDefaultBlock: 0
   defaultBlock: {fileID: 0}

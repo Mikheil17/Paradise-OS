@@ -1032,8 +1032,8 @@ MonoBehaviour:
   redButtonText: {fileID: 8616337132149773441}
   blueButtonText: {fileID: 8616337132149773440}
   speakerSource: {fileID: 1221828446}
-  introBlock: {fileID: 11400000, guid: 54a200a0edbedee42a341433a311ec81, type: 2}
-  wYRBlock: {fileID: 11400000, guid: 8c7f9cc9c8dd876438c5cd8c9054f997, type: 2}
+  introBlock: {fileID: 11400000, guid: 67617c89f4a2c5248bf500b0d277c2d1, type: 2}
+  wYRBlock: {fileID: 11400000, guid: ca41755957fc2e548a4b8c5584f4102e, type: 2}
 --- !u!4 &1805195890
 Transform:
   m_ObjectHideFlags: 0

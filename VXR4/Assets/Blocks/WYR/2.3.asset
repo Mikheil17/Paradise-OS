@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec5b57c65e6926a478121f3dc854292b, type: 3}
-  m_Name: WYR1 Intro
+  m_Script: {fileID: 11500000, guid: a6891d240412df040addbcc15dd20988, type: 3}
+  m_Name: 2.3
   m_EditorClassIdentifier: 
-  voiceClips:
-  - {fileID: 8300000, guid: 2906ccb7279ac3e41b57049f252ac001, type: 3}
-  choices: []
-  useDefaultBlock: 0
-  defaultBlock: {fileID: 0}
+  blueChoice: Be a public embarrassment
+  redChoice: Be a family failure
+  nextBlock: {fileID: 0}
