@@ -19,8 +19,7 @@ public class audienceNoises : MonoBehaviour
     {
         while(true)
         {
-            int secs = Random.Range(20, 45);
-            yield return new WaitForSeconds(secs);
+            yield return new WaitForSeconds(10f);
             int randNum = Random.Range(1, 5);
 
             switch(randNum)

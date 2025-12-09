@@ -5696,6 +5696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60b99fffd4d92524792fd5ffd876d481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blown: 0
   note1: {fileID: 1185404018}
   note2: {fileID: 1185404017}
   note3: {fileID: 1185404016}

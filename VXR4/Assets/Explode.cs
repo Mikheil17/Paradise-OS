@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Video;
 
@@ -36,5 +37,14 @@ public class Explode : MonoBehaviour
         // Disable the video screen
         if (videoScreen != null)
             videoScreen.SetActive(false);
+
+        StartCoroutine(forceEndExperience());
+    }
+
+    IEnumerator forceEndExperience()
+    {
+        yield return new WaitForSeconds(.5f);
+
+        //put the scene change logic here!!!!!
     }
 }

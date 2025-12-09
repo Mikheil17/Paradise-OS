@@ -8928,7 +8928,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738595652}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: efe13818ef8c3854fb76c25accc0daaf, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 782dc1af9777fb247a8c63aa9ee095c9, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -10355,6 +10355,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Explosion 3
       objectReference: {fileID: 0}
+    - target: {fileID: 560014183069458990, guid: 621e45f610d611746802ad828f66b094,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 560014183069459152, guid: 621e45f610d611746802ad828f66b094,
+        type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 560014183069459152, guid: 621e45f610d611746802ad828f66b094,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 560014183069459152, guid: 621e45f610d611746802ad828f66b094,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 560014183069459152, guid: 621e45f610d611746802ad828f66b094,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 560014183069459153, guid: 621e45f610d611746802ad828f66b094,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -10378,7 +10403,7 @@ PrefabInstance:
     - target: {fileID: 560014183069459153, guid: 621e45f610d611746802ad828f66b094,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.66
+      value: 0.49
       objectReference: {fileID: 0}
     - target: {fileID: 560014183069459153, guid: 621e45f610d611746802ad828f66b094,
         type: 3}
@@ -10418,6 +10443,11 @@ PrefabInstance:
     - target: {fileID: 560014183069459153, guid: 621e45f610d611746802ad828f66b094,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 560014183848149755, guid: 621e45f610d611746802ad828f66b094,
+        type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
