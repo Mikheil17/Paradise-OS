@@ -25,5 +25,5 @@ MonoBehaviour:
     postClips:
     - {fileID: 8300000, guid: 5db9378d2dbb0264b9871ac46c3e73f3, type: 3}
     actionObjectIndex: -1
-  blueChoice: Be a dog
-  redChoice: Be a cat
+  blueChoice: Eat a Dog
+  redChoice: Eat a Cat
