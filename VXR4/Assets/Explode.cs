@@ -10,41 +10,66 @@ public class Explode : MonoBehaviour
     public GameObject uiCanvas;          // your UI canvas to disable
     public GameObject videoScreen;       // the screen or object holding the video
 
+    private SaveManager saveManager;
+
     private void Start()
     {
-        // Subscribe to event when video finishes
-        videoPlayer.loopPointReached += OnVideoEnd;
+        saveManager = SaveManager.instance;
 
         // Ensure explosion effect starts off
         if (explosionEffect != null)
             explosionEffect.SetActive(false);
+
+        // Start the timer for the video length, then run Destroy
+        StartCoroutine(WaitAndDestroy());
     }
 
-    private void OnVideoEnd(VideoPlayer vp)
+    // Enumerator that waits for the length of the video
+    private IEnumerator WaitAndDestroy()
     {
-        // Activate explosion VFX
-        if (explosionEffect != null)
-            explosionEffect.SetActive(true);
+        if (videoPlayer != null && videoPlayer.clip != null)
+        {
+            yield return new WaitForSeconds((float)videoPlayer.clip.length - 1.0f);
+        }
 
-        // Play explosion audio
-        if (explosionSound != null)
-            explosionSound.Play();
+        Destroy();
+    }
+
+    private void Destroy()
+    {
+
+        // Disable the video screen
+        if (videoScreen != null)
+            videoScreen.SetActive(false);
 
         // Disable UI canvas
         if (uiCanvas != null)
             uiCanvas.SetActive(false);
 
-        // Disable the video screen
-        if (videoScreen != null)
-            videoScreen.SetActive(false);
+        // Activate explosion VFX
+        if (explosionEffect != null)
+        {
+            explosionEffect.SetActive(true);
+
+            var ps = explosionEffect.GetComponent<ParticleSystem>();
+
+            if (ps != null)
+            {
+                ps.Play();
+            }
+        }
+
+        // Play explosion audio
+        if (explosionSound != null)
+            explosionSound.Play();
 
         StartCoroutine(forceEndExperience());
     }
 
     IEnumerator forceEndExperience()
     {
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(0.5f);
 
-        //put the scene change logic here!!!!!
+        saveManager.GotoNextScene();
     }
 }

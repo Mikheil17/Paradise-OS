@@ -12,10 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6891d240412df040addbcc15dd20988, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: 
-  preClips:
-  - {fileID: 8300000, guid: 53a72f6f2a1997a44aae967c46a2d2f7, type: 3}
-  - {fileID: 8300000, guid: 0d3e63213ff5cc14c8fed92e467ca9da, type: 3}
-  - {fileID: 8300000, guid: 8ace32b611a0b984fb855111f1a88268, type: 3}
+  preClips: []
   choices:
   - nextBlock: {fileID: 11400000, guid: be0b99020f1782f4dbb4c97d11df7674, type: 2}
     postClips:
@@ -25,5 +22,5 @@ MonoBehaviour:
     postClips:
     - {fileID: 8300000, guid: 5db9378d2dbb0264b9871ac46c3e73f3, type: 3}
     actionObjectIndex: -1
-  blueChoice: Eat a Dog
-  redChoice: Eat a Cat
+  blueChoice: Jump till your head explodes
+  redChoice: Walk till your feet melt
