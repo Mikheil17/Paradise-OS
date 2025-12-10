@@ -38,8 +38,6 @@ public class FaceColliderTrigger : MonoBehaviour
         }
         whiteoutCanvas.alpha = 1f;
 
-        Debug.Log("Fade to white complete. Loading next scene.");
-
         saveManager.GotoNextScene();
     }
 }
