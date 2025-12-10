@@ -122,7 +122,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &473840488
+--- !u!1001 &1450074018
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -180,50 +180,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4522263577203155733, guid: b2e3a7c3be7f0bb4cbf41ef940a00099,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4522263577203155733, guid: b2e3a7c3be7f0bb4cbf41ef940a00099,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.7299578
-      objectReference: {fileID: 0}
     - target: {fileID: 4660594253446636210, guid: b2e3a7c3be7f0bb4cbf41ef940a00099,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.98575926
+      value: 0.98798686
       objectReference: {fileID: 0}
     - target: {fileID: 4660594253446636210, guid: b2e3a7c3be7f0bb4cbf41ef940a00099,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.07383325
+      value: 0.067084715
       objectReference: {fileID: 0}
     - target: {fileID: 4660594253446636210, guid: b2e3a7c3be7f0bb4cbf41ef940a00099,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.14707759
+      value: -0.12076888
       objectReference: {fileID: 0}
     - target: {fileID: 4660594253446636210, guid: b2e3a7c3be7f0bb4cbf41ef940a00099,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.03457955
+      value: 0.06925699
       objectReference: {fileID: 0}
     - target: {fileID: 4660594253446636210, guid: b2e3a7c3be7f0bb4cbf41ef940a00099,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 7.781
+      value: 8.586
       objectReference: {fileID: 0}
     - target: {fileID: 4660594253446636210, guid: b2e3a7c3be7f0bb4cbf41ef940a00099,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -17.326
+      value: -13.412
       objectReference: {fileID: 0}
     - target: {fileID: 4660594253446636210, guid: b2e3a7c3be7f0bb4cbf41ef940a00099,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -5.205
+      value: 7.008
       objectReference: {fileID: 0}
     - target: {fileID: 5300730413714480244, guid: b2e3a7c3be7f0bb4cbf41ef940a00099,
         type: 3}
@@ -244,4 +234,4 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 473840488}
+  - {fileID: 1450074018}
