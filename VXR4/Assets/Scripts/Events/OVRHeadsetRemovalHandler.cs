@@ -31,6 +31,7 @@ public class OVRHeadsetRemovalHandler : MonoBehaviour
 
         if (audioSource != null && removalClip != null)
         {
+            saveManager.setupNextScene();
             audioSource.PlayOneShot(removalClip);
             Invoke(nameof(QuitApp), removalClip.length);
         }

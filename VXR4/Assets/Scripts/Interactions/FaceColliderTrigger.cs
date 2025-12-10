@@ -20,7 +20,7 @@ public class FaceColliderTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("head"))
+        if (other.CompareTag("MainCamera"))
         {
             StartCoroutine(FadeToWhite(3f)); // 3 second fade
         }

@@ -59,7 +59,7 @@ public class SaveManager : MonoBehaviour
         return saveData;
     }
 
-    public setupNextScene()
+    public void setupNextScene()
     {
         if (saveData != null)
         {
