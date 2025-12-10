@@ -10,9 +10,19 @@ public class crowbar : MonoBehaviour
     public GameObject Glass1;
     public GameObject Glass2;
     public GameObject Glass3;
+    public GameObject blackScreen;
     public AudioSource voiceclip1;
     public AudioSource voiceclip2;
     public AudioSource voiceclip3;
+
+
+    private SaveManager saveManager;
+
+    private void Awake()
+    {
+        saveManager = SaveManager.instance;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("head"))
@@ -51,7 +61,18 @@ public class crowbar : MonoBehaviour
                 break;
             case 3:
                 Glass3.SetActive(true);
+                voiceclip2.Play();
+                break;
+
+            case 4:
+                Glass1.SetActive(false);
+                Glass2.SetActive(false);
+                Glass3.SetActive(false);
+                blackScreen.SetActive(true);
                 StartCoroutine(endScene());
+                break;
+
+            default:
                 break;
         }
     }
@@ -59,8 +80,7 @@ public class crowbar : MonoBehaviour
     IEnumerator endScene()
     {
         voiceclip3.Play();
-        yield return new WaitForSeconds(5f);
-        //jump cut to black here
-        //scene change to evil butler here
+        yield return new WaitForSeconds(1f);
+        saveManager.GotoNextScene();
     }
 }

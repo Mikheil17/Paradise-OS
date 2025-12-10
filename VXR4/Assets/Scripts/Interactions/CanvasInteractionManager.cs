@@ -93,10 +93,12 @@ public class CanvasInteractionManager : MonoBehaviour
                     speakerSource.clip = clip;
                     speakerSource.Play();
                     yield return new WaitForSeconds(clip.length + 0.5f);
-                    saveManager.GotoNextScene();
                 }
             }
         }
+        
+        // Go to next scene after all outro dialogue has finished
+        saveManager.GotoNextScene();
     }
 
     private IEnumerator WaitForFinish(int index)

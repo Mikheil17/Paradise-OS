@@ -9,6 +9,7 @@ public class Explode : MonoBehaviour
     public GameObject explosionEffect;   // particle system or light
     public GameObject uiCanvas;          // your UI canvas to disable
     public GameObject videoScreen;       // the screen or object holding the video
+    public CanvasGroup secondaryCanvasGroup;
 
     private SaveManager saveManager;
 
@@ -59,6 +60,9 @@ public class Explode : MonoBehaviour
             }
         }
 
+        if (secondaryCanvasGroup != null)
+            secondaryCanvasGroup.alpha = 1f;
+
         // Play explosion audio
         if (explosionSound != null)
             explosionSound.Play();
@@ -68,7 +72,7 @@ public class Explode : MonoBehaviour
 
     IEnumerator forceEndExperience()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.5f);
 
         saveManager.GotoNextScene();
     }

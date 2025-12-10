@@ -190,6 +190,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: CanvasInteractionManager, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 6566197442951759365, guid: a1ce6709f945dc3428297ff6a67c4e23,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7294337379985486085, guid: a1ce6709f945dc3428297ff6a67c4e23,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -214,6 +219,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rate Your Experience color
+      objectReference: {fileID: 0}
+    - target: {fileID: 7412781779803625230, guid: a1ce6709f945dc3428297ff6a67c4e23,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7412781779803625231, guid: a1ce6709f945dc3428297ff6a67c4e23,
         type: 3}
@@ -292,7 +302,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: a1ce6709f945dc3428297ff6a67c4e23, type: 3}
 --- !u!1 &190794861 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 6566197442951759365, guid: a1ce6709f945dc3428297ff6a67c4e23,
+  m_CorrespondingSourceObject: {fileID: 7412781779803625230, guid: a1ce6709f945dc3428297ff6a67c4e23,
     type: 3}
   m_PrefabInstance: {fileID: 190794860}
   m_PrefabAsset: {fileID: 0}

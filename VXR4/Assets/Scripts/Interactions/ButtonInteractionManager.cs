@@ -72,8 +72,7 @@ public class ButtonInteractionManager : MonoBehaviour
             if (redButtonText != null) redButtonText.text = "";
             yield return new WaitForSeconds(2f);
 
-            if(wYRBlock.nextBlock != null)
-                wYRBlock = wYRBlock.nextBlock;
+            wYRBlock = wYRBlock.nextBlock;
         }
 
         saveManager.GotoNextScene();
