@@ -885,7 +885,7 @@ MonoBehaviour:
   speakerSource: {fileID: 1972567426}
   songSource: {fileID: 1159992795}
   introBlock: {fileID: 11400000, guid: d0246d96098bca0438e32043c555948a, type: 2}
-  introSong: {fileID: 8300000, guid: cc29d235de8807c4d9e84fac2f8af34d, type: 3}
+  introSong: {fileID: 0}
   outroBlock: {fileID: 0}
   canvases:
   - {fileID: 548289291}
