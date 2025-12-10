@@ -6,8 +6,6 @@ using UnityEngine;
 public class Age : MonoBehaviour
 {
     public TMP_Text ageText;
-    public CanvasInteractionManager canvasManager;
-    public int canvasIndex;
     private int age = 0;
 
     public void Increase()
@@ -26,11 +24,5 @@ public class Age : MonoBehaviour
 
         age--;
         ageText.text = age.ToString();
-    }
-
-    public void SubmitAge()
-    {
-        if(canvasManager != null)
-            canvasManager.setTrue(canvasIndex);
     }
 }

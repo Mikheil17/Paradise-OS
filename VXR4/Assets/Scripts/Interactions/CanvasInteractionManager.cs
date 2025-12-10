@@ -1,117 +1,40 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
 public class CanvasInteractionManager : MonoBehaviour
 {
-    [Header("Dialogue Audio Source")]
-    public AudioSource speakerSource;
+    public Canvas[] canvases; // Assign canvases in inspector
+    private int currentIndex = 0;
 
-    [Header("Song Audio Source")]
-    public AudioSource songSource;
-
-    [Header("Intro Dialogue")]
-    public DialogueBlock introBlock;
-
-    [Header("Intro Song")]
-    public AudioClip introSong;
-
-    [Header("Outro Dialogue")]
-    public DialogueBlock outroBlock;
-
-    [Header("Canvases")]
-    public GameObject[] canvases;
-
-    [Header("Finish Flags")]
-    public bool[] finishes;
-
-    private SaveManager saveManager; 
-
-    private void Awake()
+    void Start()
     {
-        saveManager = SaveManager.instance;
-        StartCoroutine(PlayIntroMusicAndDialogue());
+        ShowCanvas(currentIndex);
     }
 
-    private IEnumerator PlayIntroMusicAndDialogue()
+    public void ShowCanvas(int index)
     {
-        // Play intro music
-        if (introSong != null && songSource != null)
+        for (int i = 0; i < canvases.Length; i++)
         {
-            songSource.clip = introSong;
-            songSource.Play();
+            canvases[i].gameObject.SetActive(i == index);
         }
-
-        // Wait 1 second after music starts
-        yield return new WaitForSeconds(1f);
-
-        // Play intro dialogue
-        if (introBlock != null && introBlock.voiceClips != null)
-        {
-            foreach (AudioClip clip in introBlock.voiceClips)
-            {
-                if (clip != null && speakerSource != null)
-                {
-                    speakerSource.clip = clip;
-                    speakerSource.Play();
-                    yield return new WaitForSeconds(clip.length + 0.5f);
-                }
-            }
-        }
-
-        // Go through canvases, activate each, wait for finishes[index] to be true
-        if (canvases != null && finishes != null)
-        {
-            for (int i = 0; i < canvases.Length && i < finishes.Length; i++)
-            {
-                if (canvases[i] != null)
-                    canvases[i].SetActive(true);
-
-                // Wait until finishes[i] is true
-                yield return StartCoroutine(WaitForFinish(i));
-
-                if (canvases[i] != null)
-                    canvases[i].SetActive(false);
-
-                if( i < canvases.Length - 1)
-                    yield return new WaitForSeconds(2f);
-            }
-        }
-
-        // After all canvases are done, play outro dialogue
-        yield return StartCoroutine(PlayOutroDialogue());
+        currentIndex = index;
+        OnCanvasActivated(index);
     }
 
-    private IEnumerator PlayOutroDialogue()
+    public void NextCanvas()
     {
-        if (outroBlock != null && outroBlock.voiceClips != null)
-        {
-            foreach (AudioClip clip in outroBlock.voiceClips)
-            {
-                if (clip != null && speakerSource != null)
-                {
-                    speakerSource.clip = clip;
-                    speakerSource.Play();
-                    yield return new WaitForSeconds(clip.length + 0.5f);
-                    saveManager.GotoNextScene();
-                }
-            }
-        }
+        int next = (currentIndex + 1) % canvases.Length;
+        ShowCanvas(next);
     }
 
-    private IEnumerator WaitForFinish(int index)
+    public void PreviousCanvas()
     {
-        while (!finishes[index])
-        {
-            yield return null;
-        }
+        int prev = (currentIndex - 1 + canvases.Length) % canvases.Length;
+        ShowCanvas(prev);
     }
 
-    public void setTrue(int index)
+    protected virtual void OnCanvasActivated(int index)
     {
-        if (index >= 0 && index < finishes.Length)
-        {
-            finishes[index] = true;
-        }
+        // Override or subscribe for custom logic when a canvas is shown
+        Debug.Log("Canvas " + index + " activated.");
     }
 }

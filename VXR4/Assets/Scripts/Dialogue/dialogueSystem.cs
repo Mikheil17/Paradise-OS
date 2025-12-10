@@ -1,33 +1,78 @@
 using UnityEngine;
+using TMPro;
 using System.Collections;
 
-public class DialogueSystem : MonoBehaviour
+public class DialogueSystemManager : MonoBehaviour
 {
+    [Header("Dialogue System References")]
+    public DialogueBlock currentBlock;
     public AudioSource audioSource;
-    public AudioClip[] audioClips;
+    public GameObject choiceUI;
 
-    private SaveManager saveManager;
+    private Coroutine dialogueCoroutine;
 
-    private void Start()
+    void Start()
     {
-
-        saveManager = SaveManager.instance;
-
-        if (audioSource != null && audioClips != null && audioClips.Length > 0)
-        {
-            StartCoroutine(PlayAudioSequence());
-        }
+        if (currentBlock != null)
+            PlayDialogueBlock(currentBlock);
     }
 
-    private IEnumerator PlayAudioSequence()
+    public void PlayDialogueBlock(DialogueBlock block)
     {
-        foreach (var clip in audioClips)
+        currentBlock = block;
+        if (dialogueCoroutine != null)
+            StopCoroutine(dialogueCoroutine);
+        dialogueCoroutine = StartCoroutine(PlayBlockCoroutine());
+    }
+
+    IEnumerator PlayBlockCoroutine()
+    {
+        int clipCount = currentBlock.voiceClips != null ? currentBlock.voiceClips.Length : 0;
+        for (int i = 0; i < clipCount; i++)
         {
+            var clip = currentBlock.voiceClips[i];
+            if (clip == null) continue;
             audioSource.clip = clip;
             audioSource.Play();
-            yield return new WaitWhile(() => audioSource.isPlaying);
+            yield return new WaitForSeconds(clip.length);
         }
+            
+        // Decision logic for next block
+        if (currentBlock.useDefaultBlock && currentBlock.defaultBlock != null)
+            PlayDialogueBlock(currentBlock.defaultBlock);
+        else if (currentBlock.choices != null && currentBlock.choices.Length > 0)
+            ShowChoiceUI(currentBlock.choices);
+        else
+            EndDialogue();
+    }
 
-        saveManager.GotoNextScene();
+    void ShowChoiceUI(DialogueChoice[] choices)
+    {
+        if (choiceUI != null)
+            choiceUI.SetActive(true);
+
+        // TODO: Implement your own UI logic to show choices from the block
+        StartCoroutine(PickChoiceByVoice(choices));
+    }
+
+    IEnumerator PickChoiceByVoice(DialogueChoice[] choices)
+    {
+        // TODO: Integrate Meta SDK microphone and voice recognition
+        yield return new WaitForSeconds(2f); // Simulate waiting for user response
+
+        int pickedIndex = 0; // Dummy: always pick first choice
+
+        if (choiceUI != null)
+            choiceUI.SetActive(false);
+        if (choices != null && choices.Length > 0 && choices[pickedIndex] != null && choices[pickedIndex].nextBlock != null)
+            PlayDialogueBlock(choices[pickedIndex].nextBlock);
+        else
+            EndDialogue();
+    }
+
+    void EndDialogue()
+    {
+        if (choiceUI != null)
+            choiceUI.SetActive(false);
     }
 }

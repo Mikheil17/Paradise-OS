@@ -194,6 +194,17 @@ public class DanceSimulator : MonoBehaviour
             }
             Debug.Log("AI wins the dance battle!");
         }
+        StartCoroutine(WaitAndFadeOut(resultClipLength));
+    }
+
+    private IEnumerator WaitAndFadeOut(float resultClipLength)
+    {
+        yield return new WaitForSeconds(resultClipLength + 15f);
+        FadeVRCanvas(0f, 1f, crowdFadeDuration);
+        yield return new WaitForSeconds(crowdFadeDuration);
+        // Load next scene by build index
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        SceneManager.LoadScene(nextSceneIndex);
     }
 
     public void FadeVRCanvas(float from, float to, float duration)

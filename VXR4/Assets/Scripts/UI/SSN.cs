@@ -6,9 +6,7 @@ using UnityEngine;
 public class SSN : MonoBehaviour
 {
     public TMP_Text ssnText;
-    public CanvasInteractionManager canvasManager;
-    public int canvasIndex;
-    private string ssnFormat = "***-**-****";
+    private string ssnFormat = "***-***-****";
     private int cursorIndex = 0;
 
     void Start()
@@ -21,12 +19,15 @@ public class SSN : MonoBehaviour
     {
         int idx = cursorIndex;
         if (idx < ssnText.text.Length && ssnText.text[idx] == '*')
+        {
             ssnText.text = ReplaceAt(ssnText.text, idx, number[0]);
-            
+        }
         cursorIndex = GetNextEditableIndex(idx + 1, 1);
 
         if (!ssnText.text.Contains("*"))
+        {
             OnSSNComplete();
+        }
     }
     private int GetNextEditableIndex(int start, int direction)
     {
@@ -35,10 +36,8 @@ public class SSN : MonoBehaviour
         {
             if (ssnText.text[idx] != '-')
                 return idx;
-
             idx += direction;
         }
-
         return Mathf.Clamp(idx, 0, ssnText.text.Length - 1);
     }
 
@@ -51,6 +50,6 @@ public class SSN : MonoBehaviour
 
     private void OnSSNComplete()
     {
-        canvasManager.setTrue(canvasIndex);
+        // Add later
     }
 }
