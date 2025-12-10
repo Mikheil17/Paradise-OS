@@ -61,18 +61,8 @@ public class crowbar : MonoBehaviour
                 break;
             case 3:
                 Glass3.SetActive(true);
-                voiceclip2.Play();
-                break;
-
-            case 4:
-                Glass1.SetActive(false);
-                Glass2.SetActive(false);
-                Glass3.SetActive(false);
-                voiceclip3.Play();
-                blackScreen.SetActive(true);
                 StartCoroutine(endScene());
                 break;
-
             default:
                 break;
         }
@@ -80,7 +70,13 @@ public class crowbar : MonoBehaviour
 
     IEnumerator endScene()
     {
-        yield return new WaitForSeconds(5f);
+        voiceclip3.Play();
+        yield return new WaitWhile(()=>voiceclip3.isPlaying);
+        Glass1.SetActive(false);
+        Glass2.SetActive(false);
+        Glass3.SetActive(false);
+        blackScreen.SetActive(true);
+        yield return new WaitForSeconds(.5f);
         saveManager.GotoNextScene();
     }
 }
